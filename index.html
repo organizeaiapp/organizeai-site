@@ -2,6 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    // Auth relay: Supabase redirects magic-link tokens to this page (Site URL).
+    // If a Supabase access_token is present in the hash, forward it to the
+    // extension's auth-callback page so it can store the session.
+    (function () {
+      var hash = window.location.hash;
+      if (hash && hash.indexOf('access_token=') !== -1) {
+        window.location.replace(
+          'chrome-extension://jgogpdaolnoncclmcioefblblnnbokmb/pro/auth-callback.html' + hash
+        );
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OrganizeAI — AI Workspace & Chat Organizer</title>
   <meta name="description" content="Organize your ChatGPT and Gemini chats into folders. One clean sidebar. Both platforms. Free Chrome extension." />
