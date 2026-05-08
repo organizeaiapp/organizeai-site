@@ -1,165 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="icon128.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – OrganizeAI</title>
+  <title>Privacy Policy — OrganizeAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg: #0a0a14;
+      --surface: #12121f;
+      --border: rgba(108, 142, 191, 0.15);
+      --brand: #6c8ebf;
+      --accent: #f5c842;
+      --text: #e8eaf0;
+      --muted: #8890a4;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f9f9f9;
-      color: #222;
-      line-height: 1.7;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
     }
-    header {
-      background: #1a1a2e;
-      color: #fff;
-      padding: 32px 24px;
-      text-align: center;
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(10, 10, 20, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
     }
-    header h1 { font-size: 1.8rem; font-weight: 700; }
-    header p { margin-top: 6px; font-size: 0.95rem; opacity: 0.75; }
-    main {
-      max-width: 760px;
-      margin: 48px auto;
-      padding: 0 24px 64px;
-    }
-    h2 {
-      font-size: 1.15rem;
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
       font-weight: 700;
-      margin: 36px 0 10px;
-      color: #1a1a2e;
-      border-bottom: 2px solid #e8e8f0;
-      padding-bottom: 6px;
+      font-size: 1.1rem;
     }
-    p { margin-bottom: 14px; }
-    ul { margin: 10px 0 14px 20px; }
-    ul li { margin-bottom: 8px; }
-    a { color: #4f46e5; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .badge {
+    .nav-logo-icon {
+      width: 28px; height: 28px;
+      background: var(--brand);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+    nav a.back { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav a.back:hover { color: var(--brand); }
+
+    .hero {
+      padding: 56px 40px 40px;
+      max-width: 860px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-badge {
       display: inline-block;
-      background: #eef2ff;
-      color: #4f46e5;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 2px 10px;
-      border-radius: 99px;
-      margin-left: 8px;
-      vertical-align: middle;
+      background: rgba(108, 142, 191, 0.12);
+      border: 1px solid rgba(108, 142, 191, 0.3);
+      color: var(--brand);
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 20px;
     }
-    .badge-pro {
-      display: inline-block;
-      background: #fff8e1;
-      color: #f59e0b;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 2px 10px;
-      border-radius: 99px;
-      margin-left: 8px;
-      vertical-align: middle;
+    .hero h1 { font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+    .hero p { color: var(--muted); font-size: 1rem; line-height: 1.6; }
+    .hero p a { color: var(--brand); text-decoration: none; }
+
+    .content-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
     }
+
+    .policy-body {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px;
+    }
+
+    /* Dark theme overrides — these beat Termly's inline styles */
+    .policy-body [data-custom-class="body"],
+    .policy-body [data-custom-class="body"] * { background: transparent !important; }
+
+    .policy-body [data-custom-class="title"],
+    .policy-body [data-custom-class="title"] * {
+      font-family: 'Outfit', sans-serif !important;
+      font-size: 22px !important; color: var(--text) !important;
+    }
+    .policy-body [data-custom-class="subtitle"],
+    .policy-body [data-custom-class="subtitle"] * {
+      font-family: 'Outfit', sans-serif !important;
+      color: var(--muted) !important; font-size: 14px !important;
+    }
+    .policy-body [data-custom-class="heading_1"],
+    .policy-body [data-custom-class="heading_1"] * {
+      font-family: 'Outfit', sans-serif !important;
+      font-size: 17px !important; color: var(--text) !important;
+    }
+    .policy-body [data-custom-class="heading_2"],
+    .policy-body [data-custom-class="heading_2"] * {
+      font-family: 'Outfit', sans-serif !important;
+      font-size: 15px !important; color: var(--text) !important;
+    }
+    .policy-body [data-custom-class="body_text"],
+    .policy-body [data-custom-class="body_text"] * {
+      color: #b0b8cc !important; font-size: 14px !important;
+      font-family: 'Outfit', sans-serif !important;
+    }
+    .policy-body [data-custom-class="link"],
+    .policy-body [data-custom-class="link"] * {
+      color: var(--brand) !important; font-size: 14px !important;
+      font-family: 'Outfit', sans-serif !important;
+      word-break: break-word !important;
+    }
+
+    .policy-body h1 { font-size: 1.5rem; color: var(--text); margin-bottom: 8px; }
+    .policy-body h2 {
+      font-size: 1.05rem; color: var(--text);
+      border-top: 1px solid var(--border);
+      padding-top: 1.4em; margin-top: 1.8em; margin-bottom: 0.6em;
+    }
+    .policy-body h3 { font-size: 0.95rem; color: var(--brand); margin-top: 1.2em; margin-bottom: 0.4em; }
+
+    .policy-body div, .policy-body span, .policy-body p, .policy-body li {
+      color: #b0b8cc; font-size: 14px; line-height: 1.75;
+    }
+    .policy-body strong { color: var(--text); }
+    .policy-body a { color: var(--brand) !important; text-decoration: none; }
+    .policy-body a:hover { color: var(--accent) !important; }
+
+    .policy-body ul { padding-left: 1.5em; margin: 0.5em 0; }
+    .policy-body ul li { margin-bottom: 6px; }
+
+    .policy-body table { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: 13px; }
+    .policy-body table th,
+    .policy-body table td { border: 1px solid var(--border); padding: 10px 14px; color: #b0b8cc; vertical-align: top; }
+    .policy-body table th { background: rgba(108,142,191,0.08) !important; color: var(--text); font-weight: 600; }
+
+    /* Hide Termly SVG logo */
+    .policy-body > span:first-child { display: none !important; }
+
+    .termly-credit {
+      margin-top: 2.5em; padding-top: 1.5em;
+      border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--muted);
+    }
+    .termly-credit a { color: var(--muted); }
+
     footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 0.85rem;
-      color: #888;
-      border-top: 1px solid #e8e8f0;
+      border-top: 1px solid var(--border);
+      padding: 28px 40px; text-align: center;
+      color: var(--muted); font-size: 0.85rem;
+    }
+    footer a { color: var(--brand); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 36px 20px 28px; }
+      .hero h1 { font-size: 1.7rem; }
+      .content-wrapper { padding: 28px 16px 60px; }
+      .policy-body { padding: 24px 16px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1><img src="icon128.png" width="40" height="40"> OrganizeAI</h1>
-  <p>Privacy Policy &nbsp;·&nbsp; Effective Date: March 21, 2026</p>
-</header>
+<nav>
+  <a href="https://organizeai.app" class="nav-logo">
+    <div class="nav-logo-icon">📁</div>
+    OrganizeAI
+  </a>
+  <a href="https://organizeai.app" class="back">← Back to home</a>
+</nav>
 
-<main>
+<div class="hero">
+  <div class="hero-badge">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p>Last updated April 05, 2026 &nbsp;·&nbsp; Questions? Email <a href="mailto:hello@organizeai.app">hello@organizeai.app</a></p>
+</div>
 
-  <p>Thank you for using OrganizeAI. This Privacy Policy explains what information we collect, how we use it, and your rights as a user. We built OrganizeAI with privacy in mind — free tier data never leaves your device.</p>
+<div class="content-wrapper">
+  <div class="policy-body">
 
-  <h2>1. Who We Are</h2>
-  <p>OrganizeAI is a Chrome browser extension that helps you organize your AI chat conversations across platforms like Gemini and ChatGPT. It is operated by OrganizeAI (<a href="mailto:organizeaiapp@gmail.com">organizeaiapp@gmail.com</a>).</p>
+    <!-- TERMLY POLICY — pasted verbatim, Termly's own <style> block included -->
+    <style>
+      [data-custom-class='body'], [data-custom-class='body'] * { background: transparent !important; }
+      [data-custom-class='title'], [data-custom-class='title'] * { font-family: Arial !important; font-size: 26px !important; color: #000000 !important; }
+      [data-custom-class='subtitle'], [data-custom-class='subtitle'] * { font-family: Arial !important; color: #595959 !important; font-size: 14px !important; }
+      [data-custom-class='heading_1'], [data-custom-class='heading_1'] * { font-family: Arial !important; font-size: 19px !important; color: #000000 !important; }
+      [data-custom-class='heading_2'], [data-custom-class='heading_2'] * { font-family: Arial !important; font-size: 17px !important; color: #000000 !important; }
+      [data-custom-class='body_text'], [data-custom-class='body_text'] * { color: #595959 !important; font-size: 14px !important; font-family: Arial !important; }
+      [data-custom-class='link'], [data-custom-class='link'] * { color: #3030F1 !important; font-size: 14px !important; font-family: Arial !important; word-break: break-word !important; }
+    </style>
 
-  <h2>2. Data We Collect</h2>
+    <div data-custom-class="body">
+      <div><strong><span style="font-size: 26px;"><span data-custom-class="title"><h1>PRIVACY POLICY</h1></span></span></strong></div>
+      <div><span style="color: rgb(127, 127, 127);"><strong><span style="font-size: 15px;"><span data-custom-class="subtitle">Last updated April 05, 2026</span></span></strong></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span style="color: rgb(89, 89, 89); font-size: 15px;"><span data-custom-class="body_text">This Privacy Notice for <strong>OrganizeAI</strong> ("we," "us," or "our") describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:</span></span></div>
+      <ul>
+        <li data-custom-class="body_text" style="line-height: 1.5;">Visit our website at <a target="_blank" data-custom-class="link" href="https://organizeai.app">https://organizeai.app</a> or any website of ours that links to this Privacy Notice</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;">Download and use our application (OrganizeAI), or any other application of ours that links to this Privacy Notice</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;">Use OrganizeAI. OrganizeAI is a Google Chrome extension that helps users organize their AI conversations from ChatGPT and Gemini into folders. Pro users get cloud sync across devices via a paid subscription processed through Stripe.</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;">Engage with us in other related ways, including any marketing or events</li>
+      </ul>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Questions or concerns?</strong> Reading this Privacy Notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a target="_blank" data-custom-class="link" href="mailto:hello@organizeai.app">hello@organizeai.app</a>.</span></div>
+      <div><br></div>
 
-  <p><strong>a) Local storage (Free users)</strong> <span class="badge">Stays on your device</span></p>
-  <p>When you use the free version of OrganizeAI, all data is stored exclusively in your browser using <code>chrome.storage.local</code>. This includes:</p>
-  <ul>
-    <li>Folder names you create</li>
-    <li>Chat IDs and titles you assign to folders</li>
-    <li>Your extension preferences and settings</li>
-  </ul>
-  <p>This data is <strong>never transmitted to our servers</strong> and never leaves your device.</p>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>SUMMARY OF KEY POINTS</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong><em>This summary provides key points from our Privacy Notice. You can find more details by clicking the links or using the <a data-custom-class="link" href="#toc">table of contents</a> below.</em></strong></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>What personal information do we process?</strong> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us. Learn more about <a data-custom-class="link" href="#personalinfo">personal information you disclose to us</a>.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Do we process any sensitive personal information?</strong> We do not process sensitive personal information.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Do we collect any information from third parties?</strong> We do not collect any information from third parties.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>How do we process your information?</strong> We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. Learn more about <a data-custom-class="link" href="#infouse">how we process your information</a>.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>In what situations and with which parties do we share personal information?</strong> We may share information in specific situations and with specific third parties. Learn more about <a data-custom-class="link" href="#whoshare">when and with whom we share your personal information</a>.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>How do we keep your information safe?</strong> We have organizational and technical processes and procedures in place to protect your personal information. Learn more about <a data-custom-class="link" href="#infosafe">how we keep your information safe</a>.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>What are your rights?</strong> Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information. Learn more about <a data-custom-class="link" href="#privacyrights">your privacy rights</a>.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>How do you exercise your rights?</strong> The easiest way to exercise your rights is by emailing <a data-custom-class="link" href="mailto:hello@organizeai.app">hello@organizeai.app</a>. We will consider and act upon any request in accordance with applicable data protection laws.</span></div>
+      <div><br></div>
 
-  <p><strong>b) Cloud storage (Pro users, when available)</strong> <span class="badge-pro">Pro feature</span></p>
-  <p>When you subscribe to OrganizeAI Pro, the following data is automatically synced to our secure cloud infrastructure to enable cross-device access and backup features:</p>
-  <ul>
-    <li>Folder names</li>
-    <li>Chat IDs associated with your folders</li>
-    <li>Your account email address</li>
-  </ul>
-  <p>Cloud sync is included as part of the Pro subscription and is enabled automatically. Free tier users' data is never transmitted — it remains exclusively in local browser storage. You can request deletion of your cloud data at any time by emailing <a href="mailto:organizeaiapp@gmail.com">organizeaiapp@gmail.com</a> with the subject "Delete My Data". We will process your request within 30 days. Note: Deleting cloud data does not affect data stored locally on your device.</p>
+      <div id="toc" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>TABLE OF CONTENTS</h2></span></strong></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#infocollect">1. WHAT INFORMATION DO WE COLLECT?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#infouse">2. HOW DO WE PROCESS YOUR INFORMATION?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#legalbases">3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR PERSONAL INFORMATION?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#whoshare">4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#cookies">5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#ai">6. DO WE OFFER ARTIFICIAL INTELLIGENCE-BASED PRODUCTS?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#intltransfers">7. IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#inforetain">8. HOW LONG DO WE KEEP YOUR INFORMATION?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#infosafe">9. HOW DO WE KEEP YOUR INFORMATION SAFE?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#infominors">10. DO WE COLLECT INFORMATION FROM MINORS?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#privacyrights">11. WHAT ARE YOUR PRIVACY RIGHTS?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#DNT">12. CONTROLS FOR DO-NOT-TRACK FEATURES</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#uslaws">13. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#otherlaws">14. DO OTHER REGIONS HAVE SPECIFIC PRIVACY RIGHTS?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#clausea">15. DATA LIABILITY AND BACKUP</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#policyupdates">16. DO WE MAKE UPDATES TO THIS NOTICE?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#contact">17. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</a></div>
+      <div style="line-height: 1.5;"><a data-custom-class="link" href="#request">18. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</a></div>
+      <div><br></div>
 
-  <p><strong>c) Email address (Waitlist / Early Access)</strong> <span class="badge">Optional</span></p>
-  <p>If you voluntarily submit your email to join our Pro waitlist or early access program, we collect:</p>
-  <ul>
-    <li>Your email address</li>
-    <li>The date you signed up</li>
-  </ul>
-  <p>This is entirely optional. You will only receive product updates and launch announcements. Every email we send includes an unsubscribe link.</p>
+      <div id="infocollect" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>1. WHAT INFORMATION DO WE COLLECT?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="heading_2" id="personalinfo"><strong><h3>Personal information you disclose to us</h3></strong></span></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> We collect personal information that you provide to us.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We collect personal information that you voluntarily provide to us when you register on the Services, express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Personal Information Provided by You.</strong> The personal information we collect may include the following:</span></div>
+      <ul>
+        <li data-custom-class="body_text" style="line-height: 1.5;">email addresses</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;">contact or authentication data</li>
+      </ul>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Sensitive Information.</strong> We do not process sensitive information.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Payment Data.</strong> We may collect data necessary to process your payment if you choose to make purchases, such as your payment instrument number and the security code associated with your payment instrument. All payment data is handled and stored by <strong>Stripe</strong>. You may find their privacy notice here: <a target="_blank" data-custom-class="link" href="https://stripe.com/privacy">https://stripe.com/privacy</a>.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="heading_2"><strong><h3>Information automatically collected</h3></strong></span></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> Some information — such as your Internet Protocol (IP) address and/or browser and device characteristics — is collected automatically when you visit our Services.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We automatically collect certain information when you visit, use, or navigate the Services. This information does not reveal your specific identity but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about how and when you use our Services, and other technical information.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">Like many businesses, we also collect information through cookies and similar technologies. The information we collect includes:</span></div>
+      <ul>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><em>Log and Usage Data.</em> Log and usage data is service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our Services. This log data may include your IP address, device information, browser type, and settings and information about your activity in the Services.</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><em>Device Data.</em> We collect device data such as information about your computer, phone, tablet, or other device you use to access the Services, including your IP address, device and application identification numbers, location, browser type, hardware model, Internet service provider and/or mobile carrier, operating system, and system configuration information.</li>
+      </ul>
 
-  <h2>3. How We Use Your Data</h2>
-  <ul>
-    <li>To provide and improve the OrganizeAI extension</li>
-    <li>To sync your folders across devices (Pro users only — included automatically with Pro subscription)</li>
-    <li>To send product updates and launch announcements (only if you opted in to our waitlist)</li>
-    <li>We <strong>never sell</strong> your data to third parties</li>
-    <li>We <strong>never use</strong> your data for advertising</li>
-  </ul>
+      <div id="infouse" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>2. HOW DO WE PROCESS YOUR INFORMATION?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</strong></span></div>
+      <ul>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>To facilitate account creation and authentication and otherwise manage user accounts.</strong></li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>To deliver and facilitate delivery of services to the user.</strong></li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>To respond to user inquiries/offer support to users.</strong></li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>To send administrative information to you.</strong> We may send you details about our products and services, changes to our terms and policies, and other similar information.</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>To fulfill and manage your orders.</strong> We may process your information to fulfill and manage your orders, payments, returns, and exchanges made through the Services.</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>To request feedback.</strong></li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>To protect our Services.</strong> We may process your information as part of our efforts to keep our Services safe and secure, including fraud monitoring and prevention.</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>To identify usage trends.</strong></li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>To save or protect an individual's vital interest.</strong></li>
+      </ul>
 
-  <h2>4. Third-Party Services</h2>
-  <p>We use the following third-party services:</p>
-  <ul>
-    <li><strong>Google Forms / Google Sheets</strong> – used to collect and store waitlist signups. Subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
-    <li><strong>Brevo (brevo.com)</strong> – used to send product update emails to waitlist subscribers. Unsubscribe links are included in every email and managed automatically. Subject to <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank">Brevo's Privacy Policy</a>.</li>
-    <li><strong>Supabase (supabase.com)</strong> – will be used to store Pro users' cloud sync data securely. Subject to <a href="https://supabase.com/privacy" target="_blank">Supabase's Privacy Policy</a>. (Pro tier, coming soon.)</li>
-  </ul>
-  <p>We do not share your data with any other third parties.</p>
+      <div id="legalbases" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> We only process your personal information when we believe it is necessary and we have a valid legal reason to do so under applicable law, like with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill our legitimate business interests.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong><u>If you are located in the EU or UK, this section applies to you.</u></strong></em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">The GDPR and UK GDPR require us to explain the valid legal bases we rely on. We may rely on the following legal bases:</span></div>
+      <ul>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>Consent.</strong> We may process your information if you have given us permission to use your personal information for a specific purpose. You can withdraw your consent at any time.</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>Performance of a Contract.</strong> We may process your personal information when we believe it is necessary to fulfill our contractual obligations to you.</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>Legitimate Interests.</strong> We may process your information when we believe it is reasonably necessary to achieve our legitimate business interests and those interests do not outweigh your rights and freedoms.</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>Legal Obligations.</strong> We may process your information where we believe it is necessary for compliance with our legal obligations.</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>Vital Interests.</strong> We may process your information where we believe it is necessary to protect your vital interests or the vital interests of a third party.</li>
+      </ul>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong><u>If you are located in Canada, this section applies to you.</u></strong></em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We may process your information if you have given us specific permission (express consent) or in situations where your permission can be inferred (implied consent). You can withdraw your consent at any time.</span></div>
 
-  <h2>5. Data Retention</h2>
-  <ul>
-    <li><strong>Local data (Free)</strong> – retained in your browser until you uninstall the extension or clear browser storage.</li>
-    <li><strong>Cloud data (Pro)</strong> – retained for the duration of your Pro subscription, or until you request deletion.</li>
-    <li><strong>Email (waitlist)</strong> – retained until you unsubscribe or request removal.</li>
-  </ul>
+      <div id="whoshare" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> We may share information in specific situations described in this section and/or with the following third parties.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Vendors, Consultants, and Other Third-Party Service Providers.</strong> We may share your data with third-party vendors, service providers, contractors, or agents who perform services for us or on our behalf. We have contracts in place with our third parties designed to help safeguard your personal information.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">The third parties we may share personal information with are as follows:</span></div>
+      <ul>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>Cloud Computing Services</strong> — Supabase</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>Invoice and Billing</strong> — Stripe</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>User Account Registration and Authentication</strong> — Supabase</li>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>Email Marketing &amp; Transactional Email</strong> — Brevo</li>
+      </ul>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We also may need to share your personal information in the following situations:</span></div>
+      <ul>
+        <li data-custom-class="body_text" style="line-height: 1.5;"><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+      </ul>
 
-  <h2>6. Your Rights</h2>
-  <p>You have the right to:</p>
-  <ul>
-    <li>Access the data we hold about you</li>
-    <li>Request deletion of your data at any time</li>
-    <li>Unsubscribe from emails at any time via the link in any email</li>
-    <li>Request deletion of your cloud data (Pro users) by contacting us</li>
-  </ul>
-  <p>To exercise any of these rights, email us at <a href="mailto:organizeaiapp@gmail.com">organizeaiapp@gmail.com</a>.</p>
+      <div id="cookies" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> We may use cookies and other tracking technologies to collect and store your information.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We may use cookies and similar tracking technologies (like web beacons and pixels) to gather information when you interact with our Services. Some online tracking technologies help us maintain the security of our Services and your account, prevent crashes, fix bugs, save your preferences, and assist with basic site functions.</span></div>
 
-  <h2>7. Children's Privacy</h2>
-  <p>OrganizeAI is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+      <div id="ai" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>6. DO WE OFFER ARTIFICIAL INTELLIGENCE-BASED PRODUCTS?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> We offer products, features, or tools powered by artificial intelligence, machine learning, or similar technologies.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">As part of our Services, we offer products, features, or tools powered by artificial intelligence, machine learning, or similar technologies (collectively, "AI Products"). These tools are designed to enhance your experience and provide you with innovative solutions. The terms in this Privacy Notice govern your use of the AI Products within our Services.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Use of AI Technologies</strong></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We provide the AI Products through third-party service providers ("AI Service Providers"), including Anthropic, OpenAI, and Google Cloud AI. Your input, output, and personal information will be shared with and processed by these AI Service Providers to enable your use of our AI Products. You must not use the AI Products in any way that violates the terms or policies of any AI Service Provider.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Our AI Products</strong> are designed for text analysis.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>How to Opt Out:</strong> You can log in to your account settings and update your user account, or contact us using the contact information provided.</span></div>
 
-  <h2>8. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. Continued use of the extension after changes constitutes your acceptance of the updated policy.</p>
+      <div id="intltransfers" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>7. IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> We may transfer, store, and process your information in countries other than your own.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">Our servers are located in the United States. Regardless of your location, please be aware that your information may be transferred to, stored by, and processed by us in our facilities and in the facilities of the third parties with whom we may share your personal information (see <a data-custom-class="link" href="#whoshare">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</a> above), including facilities in the United States and other countries.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">If you are a resident in the EEA, UK, or Switzerland, then these countries may not necessarily have data protection laws as comprehensive as those in your country. However, we will take all necessary measures to protect your personal information in accordance with this Privacy Notice and applicable law.</span></div>
 
-  <h2>9. Contact Us</h2>
-  <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us at <a href="mailto:organizeaiapp@gmail.com">organizeaiapp@gmail.com</a>.</p>
+      <div id="inforetain" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>8. HOW LONG DO WE KEEP YOUR INFORMATION?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> We keep your information for as long as necessary to fulfill the purposes outlined in this Privacy Notice unless otherwise required by law.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice, unless a longer retention period is required or permitted by law. No purpose in this notice will require us keeping your personal information for longer than three (3) months past the termination of the user's account.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible, then we will securely store your personal information and isolate it from any further processing until deletion is possible.</span></div>
 
-</main>
+      <div id="infosafe" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>9. HOW DO WE KEEP YOUR INFORMATION SAFE?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> We aim to protect your personal information through a system of organizational and technical security measures.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.</span></div>
+
+      <div id="infominors" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>10. DO WE COLLECT INFORMATION FROM MINORS?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> We do not knowingly collect data from or market to children under 18 years of age.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We do not knowingly collect, solicit data from, or market to children under 18 years of age, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at <a target="_blank" data-custom-class="link" href="mailto:hello@organizeai.app">hello@organizeai.app</a>.</span></div>
+
+      <div id="privacyrights" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>11. WHAT ARE YOUR PRIVACY RIGHTS?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> Depending on your state of residence in the US or in some regions, such as the EEA, UK, Switzerland, and Canada, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">In some regions (like the EEA, UK, Switzerland, and Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. In certain circumstances, you may also have the right to object to the processing of your personal information.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We will consider and act upon any request in accordance with applicable data protection laws.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">If you have questions or comments about your privacy rights, you may email us at <a target="_blank" data-custom-class="link" href="mailto:hello@organizeai.app">hello@organizeai.app</a>.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="heading_2"><strong><h3>Account Information</h3></strong></span></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">If you would at any time like to review or change the information in your account or terminate your account, you can contact us using the contact information provided. Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms and/or comply with applicable legal requirements.</span></div>
+
+      <div id="DNT" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>12. CONTROLS FOR DO-NOT-TRACK FEATURES</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">California law requires us to let you know how we respond to web browser DNT signals. Because there currently is not an industry or legal standard for recognizing or honoring DNT signals, we do not respond to them at this time.</span></div>
+
+      <div id="uslaws" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>13. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> If you are a resident of California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, or Virginia, you may have the right to request access to and receive details about the personal information we maintain about you and how we have processed it, correct inaccuracies, get a copy of, or delete your personal information.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">To exercise these rights, you can contact us by emailing us at <a target="_blank" data-custom-class="link" href="mailto:hello@organizeai.app">hello@organizeai.app</a>, or by referring to the contact details at the bottom of this document.</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by emailing us at <a target="_blank" data-custom-class="link" href="mailto:hello@organizeai.app">hello@organizeai.app</a>. If your appeal is denied, you may submit a complaint to your state attorney general.</span></div>
+
+      <div id="otherlaws" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>14. DO OTHER REGIONS HAVE SPECIFIC PRIVACY RIGHTS?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> You may have additional rights based on the country you reside in.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="heading_2"><strong><h3>Australia</h3></strong></span></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We collect and process your personal information under the obligations and conditions set by Australia's Privacy Act 1988 (Privacy Act). If you believe we are unlawfully processing your personal information, you have the right to submit a complaint about a breach of the Australian Privacy Principles to the <a data-custom-class="link" href="https://www.oaic.gov.au/privacy/privacy-complaints/lodge-a-privacy-complaint-with-us" rel="noopener noreferrer" target="_blank">Office of the Australian Information Commissioner</a>.</span></div>
+
+      <div id="clausea" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>15. DATA LIABILITY AND BACKUP</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">OrganizeAI provides cloud sync as a convenience feature. While we take reasonable measures to protect your data, we are not liable for any data loss. Users are encouraged to maintain local backups using the free JSON export feature available to all users.</span></div>
+
+      <div id="policyupdates" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>16. DO WE MAKE UPDATES TO THIS NOTICE?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text"><em><strong>In Short:</strong> Yes, we will update this notice as necessary to stay compliant with relevant laws.</em></span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Revised" date at the top of this Privacy Notice. If we make material changes to this Privacy Notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.</span></div>
+
+      <div id="contact" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>17. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">If you have questions or comments about this notice, you may email us at <a target="_blank" data-custom-class="link" href="mailto:hello@organizeai.app">hello@organizeai.app</a> or contact us by post at:</span></div>
+      <div><br></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">OrganizeAI<br>United States</span></div>
+
+      <div id="request" style="line-height: 1.5;"><br></div>
+      <div style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>18. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2></span></strong></div>
+      <div style="line-height: 1.5;"><span data-custom-class="body_text">Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. To request to review, update, or delete your personal information, please visit: <a target="_blank" data-custom-class="link" href="mailto:hello@organizeai.app">hello@organizeai.app</a>.</span></div>
+    </div>
+    <!-- END TERMLY CONTENT -->
+
+    <div class="termly-credit">
+      This Privacy Policy was created using <a href="https://termly.io/products/privacy-policy-generator/" target="_blank" rel="noopener">Termly's Privacy Policy Generator</a>.
+    </div>
+  </div>
+</div>
 
 <footer>
-  <p>© 2026 OrganizeAI &nbsp;·&nbsp; <a href="mailto:organizeaiapp@gmail.com">organizeaiapp@gmail.com</a></p>
+  <p>© 2026 OrganizeAI &nbsp;·&nbsp; <a href="https://organizeai.app">organizeai.app</a> &nbsp;·&nbsp; <a href="mailto:hello@organizeai.app">hello@organizeai.app</a></p>
 </footer>
 
 </body>
